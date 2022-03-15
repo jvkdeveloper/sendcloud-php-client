@@ -41,6 +41,11 @@ class SendCloud
         return new User($this->connection);
     }
 
+    public function tracking(): Tracking
+    {
+        return new Tracking($this->connection);
+    }
+
     public function senderAddresses(): SenderAddress
     {
         return new SenderAddress($this->connection);
