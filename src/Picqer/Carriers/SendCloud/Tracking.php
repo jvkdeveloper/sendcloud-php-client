@@ -21,5 +21,4 @@ class Tracking extends Model
         'singular' => 'tracking',
         'plural' => 'trackings'
     ];
-
 }

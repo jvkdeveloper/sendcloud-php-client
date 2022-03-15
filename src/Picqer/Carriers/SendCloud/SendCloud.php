@@ -51,6 +51,17 @@ class SendCloud
         return new SenderAddress($this->connection);
     }
 
+    public function getShippingPrice($request)
+    {
+        return $this->connection->get('https://panel.sendcloud.sc/api/v2/shipping-price', [
+            'shipping_method_id' => $request['shipping_method_id'],
+            'from_country' => $request['from_country'],
+            'to_country' => $request['to_country'],
+            'weight' => $request['weight'],
+            'weight_unit' => 'gram',
+        ]);
+    }
+
     /**
      * SenderAddress Resource
      *
@@ -60,5 +71,10 @@ class SendCloud
     public function sender_addresses()
     {
         return $this->senderAddresses();
+    }
+
+    public function getConnection()
+    {
+        return $this->connection;
     }
 }
