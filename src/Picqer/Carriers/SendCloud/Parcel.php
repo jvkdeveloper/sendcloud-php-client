@@ -26,6 +26,7 @@ namespace Picqer\Carriers\SendCloud;
  * @property string tracking_number
  * @property string weight
  * @property string sender_address
+ * @property boolean request_label
  *
  * @package Picqer\Carriers\SendCloud
  */
@@ -82,6 +83,7 @@ class Parcel extends Model
         'carrier',
         'tracking_url',
         'requestShipment', // Special one to create new shipments
+        'request_label',
     ];
 
     protected $url = 'parcels';
